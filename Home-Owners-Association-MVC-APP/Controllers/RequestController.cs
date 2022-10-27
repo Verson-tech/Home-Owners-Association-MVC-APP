@@ -53,5 +53,11 @@ namespace Home_Owners_Association_MVC_APP.Controllers
             repo.InsertRequest(requestToInsert);
             return RedirectToAction("Index");
         }
+
+        public IActionResult DeleteRequest(Request request)
+        {
+            repo.DeleteRequest(request);
+            return RedirectToAction("Index");
+        }
     }
 }

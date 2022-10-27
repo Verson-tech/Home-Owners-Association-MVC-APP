@@ -20,6 +20,11 @@ namespace Home_Owners_Association_MVC_APP
             return request;
         }
 
+        public void DeleteRequest(Request request)
+        {
+            _conn.Execute("DELETE FROM MAINTENANCE WHERE RequestID = @id;", new { id = request.RequestID });
+        }
+
         public IEnumerable<Request> GetAllRequests()
         {
             return _conn.Query<Request>("SELECT * FROM MAINTENANCE;");
@@ -43,7 +48,7 @@ namespace Home_Owners_Association_MVC_APP
 
         public void UpdateRequest(Request request)
         {
-            _conn.Execute("UPDATE maintenance SET Name = @name, CategoryID = @categoryid, RequestDESC = @requestdesc, RequestSTATUS = @requeststatus, EndDate = @enddate, Initiator = @initiator, Assignee = @assignee WHERE ProductID = @id",
+            _conn.Execute("UPDATE maintenance SET Name = @name, CategoryID = @categoryid, RequestDESC = @requestdesc, RequestSTATUS = @requeststatus, EndDate = @enddate, Initiator = @initiator, Assignee = @assignee WHERE RequestID = @id",
                 new { name = request.Name, categoryid = request.CategoryID, requestdesc = request.RequestDESC, requeststatus = request.RequestSTATUS, enddate = request.EndDate, initiator = request.Initiator, assignee = request.Assignee, id = request.RequestID });
         }
     }

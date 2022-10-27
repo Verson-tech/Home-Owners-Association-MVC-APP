@@ -10,5 +10,6 @@ namespace Home_Owners_Association_MVC_APP
         public void InsertRequest(Request requestToInsert);
         public IEnumerable<Category> GetCategories();
         public Request AssignCategory();
+        public void DeleteRequest(Request request);
     }
 }
