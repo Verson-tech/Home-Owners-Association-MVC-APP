@@ -6,5 +6,6 @@ namespace Home_Owners_Association_MVC_APP
     {
         public IEnumerable<Request> GetAllRequests();
         public Request GetRequest(int id);
+        public void UpdateRequest(Request request);
     }
 }

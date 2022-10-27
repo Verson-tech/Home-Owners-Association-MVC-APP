@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Home_Owners_Association_MVC_APP.Models;
+using Microsoft.AspNetCore.Mvc;
 
 namespace Home_Owners_Association_MVC_APP.Controllers
 {
@@ -22,6 +23,23 @@ namespace Home_Owners_Association_MVC_APP.Controllers
         {
             var request = repo.GetRequest(id);
             return View(request);
+        }
+
+        public IActionResult UpdateRequest(int id)
+        {
+            Request req = repo.GetRequest(id);
+            if (req == null)
+            {
+                return View("RequestNotFound");
+            }
+            return View(req);
+        }
+
+        public IActionResult UpdateRequestToDatabase(Request request)
+        {
+            repo.UpdateRequest(request);
+
+            return RedirectToAction("ViewRequest", new { id = request.RequestID });
         }
     }
 }
