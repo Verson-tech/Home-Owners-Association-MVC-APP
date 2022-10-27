@@ -41,5 +41,17 @@ namespace Home_Owners_Association_MVC_APP.Controllers
 
             return RedirectToAction("ViewRequest", new { id = request.RequestID });
         }
+
+        public IActionResult InsertRequest()
+        {
+            var req = repo.AssignCategory();
+            return View(req);
+        }
+
+        public IActionResult InsertRequestToDatabase(Request requestToInsert)
+        {
+            repo.InsertRequest(requestToInsert);
+            return RedirectToAction("Index");
+        }
     }
 }

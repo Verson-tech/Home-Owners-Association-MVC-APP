@@ -12,14 +12,33 @@ namespace Home_Owners_Association_MVC_APP
             _conn = conn;
         }
 
+        public Request AssignCategory()
+        {
+            var categoryList = GetCategories();
+            var request = new Request();
+            request.Categories = categoryList;
+            return request;
+        }
+
         public IEnumerable<Request> GetAllRequests()
         {
             return _conn.Query<Request>("SELECT * FROM MAINTENANCE;");
         }
 
+        public IEnumerable<Category> GetCategories()
+        {
+            return _conn.Query<Category>("SELECT * FROM categories;");
+        }
+
         public Request GetRequest(int id)
         {
             return _conn.QuerySingle<Request>("SELECT * FROM MAINTENANCE WHERE REQUESTID = @id", new { id = id });
+        }
+
+        public void InsertRequest(Request requestToInsert)
+        {
+            _conn.Execute("INSERT INTO maintenance (NAME, CATEGORYID, REQUESTDESC, REQUESTSTATUS, ENDDATE, INITIATOR, ASSIGNEE) VALUES (@name, @categoryID, @requestdesc, @requeststatus, @enddate, @initiator,@assignee);",
+                 new { name = requestToInsert.Name, categoryID = requestToInsert.CategoryID, requestDESC = requestToInsert.RequestDESC, requestSTATUS = requestToInsert.RequestSTATUS, endDate =requestToInsert.EndDate, initiator = requestToInsert.Initiator, assignee = requestToInsert.Assignee });
         }
 
         public void UpdateRequest(Request request)
