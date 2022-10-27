@@ -7,4 +7,13 @@
     <RootNamespace>Home_Owners_Association_MVC_APP</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Compile Remove="Startup.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Dapper" Version="2.0.123" />
+    <PackageReference Include="MySql.Data" Version="8.0.31" />
+  </ItemGroup>
+
 </Project>

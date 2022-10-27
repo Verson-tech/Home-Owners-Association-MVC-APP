@@ -1,7 +1,19 @@
+using Home_Owners_Association_MVC_APP;
+using MySql.Data.MySqlClient;
+using System.Configuration;
+using System.Data;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddTransient<IRequestRepository, RequestRepository>();
+builder.Services.AddScoped<IDbConnection>((s) =>
+{
+    IDbConnection conn = new MySqlConnection(builder.Configuration.GetConnectionString("hoa_app"));
+    conn.Open();
+    return conn;
+});
 
 var app = builder.Build();
 
