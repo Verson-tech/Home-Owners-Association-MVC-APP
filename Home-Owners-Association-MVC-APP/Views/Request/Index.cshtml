@@ -17,8 +17,10 @@
     @foreach (var request in @Model)
     {
         <tr>
-            <td>@request.RequestID</td>
-            <td>@request.Name</td>
+            <td><a href=/Request/ViewRequest/@request.RequestID>@request.RequestID</a></td>
+            @*<td>@request.RequestID</td>*@
+            @*<td>@request.Name</td>*@
+            <td><a href=/Request/ViewRequest/@request.RequestID>@request.Name</a></td>
             <td>@request.CategoryID</td>
             <td>@request.RequestDESC</td>
             <td>@request.RequestSTATUS</td>

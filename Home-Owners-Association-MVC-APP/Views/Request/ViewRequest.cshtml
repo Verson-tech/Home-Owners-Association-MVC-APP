@@ -1,0 +1,28 @@
+﻿@model Request
+
+<h3>@Model.Name Information</h3>
+
+<table class="table">
+    <tr>
+        <th>Request ID</th>
+        <th>Name</th>
+        <th>CategoryID</th>
+        <th>RequestDESC</th>
+        <th>RequestSTATUS</th>
+        <th>StartDate</th>
+        <th>EndDate</th>
+        <th>Initiator</th>
+        <th>Assignee</th>
+    </tr>
+    <tr>
+        <td>@Model.RequestID</td>
+        <td>@Model.Name</td>
+        <td>@Model.CategoryID</td>
+        <td>@Model.RequestDESC</td>
+        <td>@Model.RequestSTATUS</td>
+        <td>@Model.StartDate</td>
+        <td>@Model.EndDate</td>
+        <td>@Model.Initiator</td>
+        <td>@Model.Assignee</td>
+    </tr>
+    </table>

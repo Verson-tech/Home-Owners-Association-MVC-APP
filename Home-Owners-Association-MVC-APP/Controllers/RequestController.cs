@@ -15,9 +15,13 @@ namespace Home_Owners_Association_MVC_APP.Controllers
         public IActionResult Index()
         {
             var requests = repo.GetAllRequests();
-            return View(requests);
- 
-           
+            return View(requests);           
+        }
+
+        public IActionResult ViewRequest(int id)
+        {
+            var request = repo.GetRequest(id);
+            return View(request);
         }
     }
 }

@@ -16,5 +16,10 @@ namespace Home_Owners_Association_MVC_APP
         {
             return _conn.Query<Request>("SELECT * FROM MAINTENANCE;");
         }
+
+        public Request GetRequest(int id)
+        {
+            return _conn.QuerySingle<Request>("SELECT * FROM MAINTENANCE WHERE REQUESTID = @id", new { id = id });
+        }
     }
 }
