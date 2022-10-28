@@ -1,15 +1,10 @@
 ﻿@model IEnumerable<Request>
 
-<h2>Requests</h2>
-
-<div style="display: block">
-    <a href="/Request/InsertRequest/">Create a New Request</a>
-</div>
-
+@*<h2>Request</h2>
 <table class="table">
     <tr>
         <th>Request ID</th>
-        <th>Name</th>     
+        <th>Name</th>
         <th>Category ID</th>
         <th>Request description</th>
         <th>Request status</th>
@@ -23,9 +18,7 @@
     {
         <tr>
             <td><a href=/Request/ViewRequest/@request.RequestID>@request.RequestID</a></td>
-            @*<td>@request.RequestID</td>*@
             <td>@request.Name</td>
-            @*<td><a href=/Request/ViewRequest/@request.RequestID>@request.Name</a></td>*@
             <td>@request.CategoryID</td>
             <td>@request.RequestDESC</td>
             <td>@request.RequestSTATUS</td>
@@ -36,4 +29,4 @@
         </tr>
     }
 
-</table>
+</table>*@
