@@ -18,7 +18,7 @@ namespace Home_Owners_Association_MVC_APP.Models
         public string? StartDate { get; set; }
         public string? EndDate { get; set; }
         public string? Initiator { get; set; }
-        public string Assignee { get; set; }
+        public string? Assignee { get; set; }
         public IEnumerable<Category> Categories { get; set; }
 
     }

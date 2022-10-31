@@ -1,74 +1,52 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    Layout = "";
 }
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Home_Owners_Association_MVC_APP</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/Home_Owners_Association_MVC_APP.styles.css" asp-append-version="true" />
+</head>
 <style>
     body{
-        background-image: url('https://images.unsplash.com/photo-1565402170291-8491f14678db?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1634&q=80')
-   
+
+        background-image: url('https://images.unsplash.com/photo-1565402170291-8491f14678db?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1634&q=80')   
     }
-/*    nav{
-        font-family:'Berlin Sans FB';
-    }*/
 </style>
-
-
-@*<div class="row">
-    <div class="col">
-        <div class="card" style="width: 18rem;">
-            <img style="height: 12rem" src="https://images.unsplash.com/photo-1518557278941-40ad89cf7829?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80" class="card-img-top" alt="...">
+<div>
+    <section class="row justify-content-center mt-5" style=" opacity: 0.9;">
+        <div class="card col-md-6 float-md-end mb-3 ms-md-3"
+             style="width: 18rem; padding: 20px; margin: 40px;">
+            <img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80"
+                 class="card-img-top"
+                 style="margin-bottom: 20px"
+                 alt="..." />
             <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
+                <a @* target="_blank" *@
+@*                   class=" dropdown-item justify-content-center text-center bg-info" href="Request/Index">Home owners' login</a>*@
+                   class="dropdown-item justify-content-center text-center bg-info" href="AdminLogin/Index">HOA administration login</a>
             </div>
         </div>
-    </div>
-   
-    <div class="col">
-        <div class="card" style="width: 18rem;">
-            <img style="height: 12rem" src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1546&q=80" class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
+@*        <div class="card col-md-6 float-md-end mb-3 ms-md-3"
+             style="width: 18rem; padding: 20px; margin: 40px">
+            <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1546&q=80"
+                 class="card-img-top"
+                 alt="..." />
+            <div class="card-body">*@
+                <a @* target="_blank" *@
+@*                   class=" dropdown-item justify-content-center text-center bg-info" href="OwnersLogin/Index">Home owners' login</a>
             </div>
-        </div>
-    </div>
+        </div>*@
+    </section>
 </div>
-*@
-
-<section class="row justify-content-center mt-5" style=" opacity: 0.9;">
-    <div class="card col-md-6 float-md-end mb-3 ms-md-3"
-         style="width: 18rem; padding: 20px; margin: 40px;">
-        <img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80"
-             class="card-img-top"
-             style="margin-bottom: 20px"
-             alt="..." />
-        <div class="card-body">
-            <a 
-               @* target="_blank" *@
-                class="dropdown-item justify-content-center text-center bg-info" href="AdminLogin/Index">HOA administration login</a>
-        </div>
-    </div>
-    <div class="card col-md-6 float-md-end mb-3 ms-md-3"
-         style="width: 18rem; padding: 20px; margin: 40px">
-        <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1546&q=80"
-             class="card-img-top"
-             alt="..." />
-        <div class="card-body">
-            <a 
-            @*    target="_blank" *@
-                class=" dropdown-item justify-content-center text-center bg-info" href="OwnersLogin/Index">Home owners' login</a>
-        </div>
-    </div>  
-</section>
 
 
-@*<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>*@
+
 
 
 

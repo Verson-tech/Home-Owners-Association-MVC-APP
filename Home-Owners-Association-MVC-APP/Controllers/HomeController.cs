@@ -16,6 +16,7 @@ namespace Home_Owners_Association_MVC_APP.Controllers
         public IActionResult Index()
         {
             return View();
+            //return "This is a home page";
         }
 
         public IActionResult Privacy()

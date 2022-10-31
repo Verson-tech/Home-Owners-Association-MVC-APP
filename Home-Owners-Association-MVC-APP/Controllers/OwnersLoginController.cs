@@ -2,11 +2,11 @@
 
 namespace Home_Owners_Association_MVC_APP.Controllers
 {
-    public class OwnersLogin : Controller
+    public class OwnersLoginController : Controller
     {
         private readonly IRequestRepository repo;
 
-        public OwnersLogin(IRequestRepository repo)
+        public OwnersLoginController(IRequestRepository repo)
         {
             this.repo = repo;
         }

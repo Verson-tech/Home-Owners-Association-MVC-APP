@@ -22,10 +22,17 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
+@*                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="home" asp-action="privacy">Privacy</a>*@
+                            @*<a class="nav-link text-dark" asp-area="" asp-controller="Request" asp-action="Index">Requests</a>*@
+                      @*  </li>*@
                         <li class="nav-item">
-                            @*<a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>*@
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Request" asp-action="Index">Requests</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Request" asp-action="InsertRequest">Create requests</a>
+                            @*<a class="nav-link text-dark" asp-area="" asp-controller="Request" asp-action="Index">Requests</a>*@
                         </li>
+@*                        <div class="card-body">
+                            <a class=" dropdown-item justify-content-center text-center bg-info" asp-controller="Request" asp-action="InsertRequest">Create requests</a>
+                        </div>*@
                     </ul>
                 </div>
             </div>
@@ -39,7 +46,7 @@
 
     <footer class="border-top footer text-muted mt-auto">
         <div class="container">
-            &copy; 2022 - Home_Owners_Association_MVC_APP - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            &copy; 2022 - Home Owners Association MVC APP - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>

@@ -1,32 +1,83 @@
-﻿@model IEnumerable<Request>
+﻿@*@model AdminLoginViewModel*@
 
-@*<h2>Request</h2>
-<table class="table">
-    <tr>
-        <th>Request ID</th>
-        <th>Name</th>
-        <th>Category ID</th>
-        <th>Request description</th>
-        <th>Request status</th>
-        <th>Start date</th>
-        <th>End date</th>
-        <th>Initiator</th>
-        <th>Assignee</th>
-    </tr>
 
-    @foreach (var request in @Model)
-    {
-        <tr>
-            <td><a href=/Request/ViewRequest/@request.RequestID>@request.RequestID</a></td>
-            <td>@request.Name</td>
-            <td>@request.CategoryID</td>
-            <td>@request.RequestDESC</td>
-            <td>@request.RequestSTATUS</td>
-            <td>@request.StartDate</td>
-            <td>@request.EndDate</td>
-            <td>@request.Initiator</td>
-            <td>@request.Assignee</td>
-        </tr>
-    }
 
-</table>*@
+<div>
+    <section class="row justify-content-center mt-5" style=" opacity: 0.9;">
+        <div class="card col-md-6 float-md-end mb-3 ms-md-3"
+             style="width: 18rem; padding: 20px; margin: 40px;">
+            <img src="https://images.unsplash.com/photo-1586282023692-6bfbd629e85d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
+                 class="card-img-top"
+                 style="margin-bottom: 20px"
+                 alt="..." />
+            <div class="card-body">
+                <a class="dropdown-item justify-content-center text-center bg-info" asp-controller="Request" asp-action="Index">View & update requests</a>
+            </div>
+        </div>
+@*        <div class="card col-md-6 float-md-end mb-3 ms-md-3"
+             style="width: 18rem; padding: 20px; margin: 40px">
+            <img src="https://images.unsplash.com/photo-1614995008867-32eef7bff38c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1674&q=80"
+                 class="card-img-top"
+                 alt="..." />
+            <div class="card-body">
+                <a class=" dropdown-item justify-content-center text-center bg-info" asp-controller="Request" asp-action="InsertRequest">Create requests</a>
+            </div>
+        </div>*@
+    </section>
+</div>
+
+
+
+
+@*<div class="row">
+
+    <div class="col-6">
+
+        <div>
+            <div class="card">
+                <div class="card-header">
+                    <h5>
+                        Register yout login
+                    </h5>
+                </div>
+
+                <div class="card-body">
+                    <form asp-controller="AdminLogin" asp-action="CreateAdminLogin" method="post">
+                        <div class="mb-3">
+                            <label class="form-label">First name</label>
+                            <input asp-for="Name" type="text" class="form-control" />
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Last name</label>
+                            <input asp-for="LastName" type="text" class="form-control" />
+                        </div>*@
+
+@*                        <div class="mb-3">
+                            <label class="form-label">Password</label>
+                            <input asp-for="Password" type="number" class="form-control" />
+                        </div>
+*@
+                     @*   <div class="mb-3">
+                            <button type="submit" class="btn btn-primary">Save</button>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="card-footer">
+                </div>
+            </div>
+
+
+        </div>
+
+
+
+    </div>
+</div>*@
+
+@*<h4>Hello, @Model.Name @Model.LastName</h4>*@
+
+
+
+
