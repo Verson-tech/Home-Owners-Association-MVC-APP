@@ -27,7 +27,7 @@ namespace Home_Owners_Association_MVC_APP.Controllers
 
         public IActionResult UpdateRequest(int id)
         {
-            Request req = repo.GetRequest(id);
+            Request req = repo.GetRequestAndCategories(id);
             if (req == null)
             {
                 return View("RequestNotFound");

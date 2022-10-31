@@ -34,7 +34,12 @@ namespace Home_Owners_Association_MVC_APP
         {
             return _conn.Query<Category>("SELECT * FROM categories;");
         }
-
+        public Request GetRequestAndCategories(int id)
+        {
+            var req = _conn.QuerySingle<Request>("SELECT * FROM MAINTENANCE WHERE REQUESTID = @id", new { id = id });
+            req.Categories = GetCategories();
+            return req;
+        }
         public Request GetRequest(int id)
         {
             return _conn.QuerySingle<Request>("SELECT * FROM MAINTENANCE WHERE REQUESTID = @id", new { id = id });
