@@ -34,26 +34,26 @@
         <td>@Model.Initiator</td>
         <td>@Model.Assignee</td>
     </tr>
-    </table>
+</table>
 
 
-    <div class="card-body">
-        <button style="display: block; border-radius: 8%;">
-            <a style="text-decoration: none; color: black;" href="/Request/UpdateRequest/@Model.RequestID">Update this Request</a>
-        </button>
-    </div>
+<div class="card-body">
+    <button style="display: block; border-radius: 8%;">
+        <a style="text-decoration: none; color: black;" href="/Request/UpdateRequest/@Model.RequestID">Update this Request</a>
+    </button>
+</div>
 
 
 
-    <div style="display: block; border-radius: 8%; padding:20px;">
+<div style="display: block; border-radius: 8%; padding:20px;">
 
-        @using (Html.BeginForm("DeleteRequest", "Request", "Post"))
-        {
-            <input type="hidden" asp-for="RequestID" value="@Model.RequestID" />
-            <input type="submit" onclick="return confirm('Are you sure?')" value="Delete this request" />
-        }
-    </div>
+    @using (Html.BeginForm("DeleteRequest", "Request", "Post"))
+    {
+        <input type="hidden" asp-for="RequestID" value="@Model.RequestID" />
+        <input type="submit" onclick="return confirm('Are you sure?')" value="Delete this request" />
+    }
+</div>
 
-    <div class="card-body">
-        <a class="dropdown-item justify-content-center text-center bg-info" asp-controller="Request" asp-action="Index">Back to all requests</a>
-    </div>
+<div class="card-body">
+    <a class="dropdown-item justify-content-center text-center bg-info" asp-controller="Request" asp-action="Index">Back to all requests</a>
+</div>

@@ -1,92 +1,201 @@
 ﻿@*@model AdminLoginViewModel*@
+@{
+    Layout = "";
+}
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,300,400,700" rel="stylesheet">
 
-<style>
-/*    .container{
-        background-image: url('https://images.unsplash.com/photo-1494861895304-fb272971c078?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80');
-    }*/
-    body{
-        background-image: url('https://images.unsplash.com/photo-1565402170291-8491f14678db?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1634&q=80');
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="app.css">
+
+    <title>HOA APP</title>
+</head>
+
+<body>
+    <style>
+        body{
+    background: #f5d9d5;
+    font-family: "Nunito",sans-serif;
+}
+.blurb h2{
+    color: #7d1178;
+    font-weight: 400;
+    font-size: 2.5rem;
+}
+.blurb p{
+    color:#f498b8;
+    font-weight: 100;
+    line-height: 2;
+}
+.content{
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+#mainNavbar  {
+    font-size: 1.5rem;
+    font-weight: 600;
+    font-size: 1.125rem;
+}
+#mainNavbar .nav-link {
+color: white;
+}
+#mainNavbar .nav-link:hover {
+    color: #7d1178;
+}
+#mainNavbar .navbar-brand{
+    color: #dec0de;
+    font-size: 1.5rem;
+    font-weight: 800;
+}
+#headingGroup span{
+    color:#EA1C2C;
+}
+#headingGroup h1{
+    font-weight: 100;
+    font-size: 4rem;
+}
+.navbar.scrolled{
+    background: rgb(222, 192, 222) ;
+    transition: background 700ms;
+}
+@@media (max-Width:1200px){
+    #headingGroup h1{
+        font-weight: 100;
+        font-size: 3rem;
     }
-</style>
-
-
-<div>
-    <section class="row justify-content-center mt-5" style=" opacity: 0.9;">
-        <div class="card col-md-6 float-md-end mb-3 ms-md-3"
-             style="width: 18rem; padding: 20px; margin: 40px;">
-            <img src="https://images.unsplash.com/photo-1586282023692-6bfbd629e85d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
-                 class="card-img-top"
-                 style="margin-bottom: 20px"
-                 alt="..." />
-            <div class="card-body">
-                <a class="dropdown-item justify-content-center text-center bg-info" asp-controller="Request" asp-action="Index">View & update requests</a>
-            </div>
+}
+    </style>
+    <nav id="mainNavbar" class="navbar navbar-dark navbar-expand-md py-0 fixed-top">
+        <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">HOA APP</a>
+        <button class="navbar-toggler" data-toggle="collapse" data-target="#navLinks" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navLinks">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a asp-area="" asp-controller="Home" asp-action="Index" class="nav-link">HOME</a>
+                </li>
+               @* <a class="nav-link text-dark" style="text-shadow: 3px 3px 5px white; padding-right:200px;" asp-area="" asp-controller="Home" asp-action="Index">Home</a>*@
+                <li class="nav-item">
+                    <a asp-area="" asp-controller="Request" asp-action="InsertRequest" class="nav-link">CREATE REQUESTS</a>
+                </li>
+                @*<a class="nav-link text-dark" style="text-shadow: 3px 3px 5px white;" asp-area="" asp-controller="Request" asp-action="InsertRequest">Create requests</a>*@
+                <li class="nav-item">
+                    <a asp-area="" asp-controller="home" asp-action="privacy" class="nav-link">PRIVACY</a>
+                </li>
+            </ul>
         </div>
-@*        <div class="card col-md-6 float-md-end mb-3 ms-md-3"
-             style="width: 18rem; padding: 20px; margin: 40px">
-            <img src="https://images.unsplash.com/photo-1614995008867-32eef7bff38c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1674&q=80"
-                 class="card-img-top"
-                 alt="..." />
-            <div class="card-body">
-                <a class=" dropdown-item justify-content-center text-center bg-info" asp-controller="Request" asp-action="InsertRequest">Create requests</a>
-            </div>
-        </div>*@
-    </section>
-</div>
+    </nav>
 
-
-
-
-@*<div class="row">
-
-    <div class="col-6">
-
-        <div>
-            <div class="card">
-                <div class="card-header">
-                    <h5>
-                        Register yout login
-                    </h5>
+    <section class="container-fluid px-0 mt-5">
+        <div class="row align-items-center">
+            <div class="col-lg-6 mt-5">
+                <div id="headingGroup" class="text-white text-center d-none d-lg-block mt-5 p-5">
+                   @* <h1 class="">MUSEUM<span>/</span>OF<span>/</span>CANDY</h1>*@
+                    <img class="img-fluid" src="https://images.unsplash.com/photo-1514214246283-d427a95c5d2f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1680&q=80" alt="">
                 </div>
-
-                <div class="card-body">
-                    <form asp-controller="AdminLogin" asp-action="CreateAdminLogin" method="post">
-                        <div class="mb-3">
-                            <label class="form-label">First name</label>
-                            <input asp-for="Name" type="text" class="form-control" />
+            </div>
+            <div class="col-lg-6">
+                
+                <div>
+                    @*view & update requets card:*@
+                    <section class="row justify-content-center mt-5" style=" opacity: 0.9;">
+                        <div class="card col-md-6 float-md-end mb-3 ms-md-3"
+                             style="width: 18rem; padding: 20px; margin: 40px;">
+                            <img src="https://images.unsplash.com/photo-1586282023692-6bfbd629e85d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
+                                 class="card-img-top"
+                                 style="margin-bottom: 20px"
+                                 alt="..." />
+                            <div class="card-body">
+                                <a class="dropdown-item justify-content-center text-center bg-info" asp-controller="Request" asp-action="Index">View & update requests</a>
+                            </div>
                         </div>
-
-                        <div class="mb-3">
-                            <label class="form-label">Last name</label>
-                            <input asp-for="LastName" type="text" class="form-control" />
+                        @*        <div class="card col-md-6 float-md-end mb-3 ms-md-3"
+                        style="width: 18rem; padding: 20px; margin: 40px">
+                        <img src="https://images.unsplash.com/photo-1614995008867-32eef7bff38c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1674&q=80"
+                        class="card-img-top"
+                        alt="..." />
+                        <div class="card-body">
+                        <a class=" dropdown-item justify-content-center text-center bg-info" asp-controller="Request" asp-action="InsertRequest">Create requests</a>
+                        </div>
                         </div>*@
-
-@*                        <div class="mb-3">
-                            <label class="form-label">Password</label>
-                            <input asp-for="Password" type="number" class="form-control" />
-                        </div>
-*@
-                     @*   <div class="mb-3">
-                            <button type="submit" class="btn btn-primary">Save</button>
-                        </div>
-                    </form>
+                    </section>
                 </div>
 
-                <div class="card-footer">
+            </div>
+        </div>
+    </section>
+
+    <section class="container-fluid px-0">
+        <div class="row align-items-center content">
+            <div class="col-md-6 order-2 order-md-1 p-5">
+                <img src="https://images.unsplash.com/photo-1476984251899-8d7fdfc5c92c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2232&q=80" alt="" class="img-fluid">
+            </div>
+            <div class="col-md-6 text-center order-1 order-md-2">
+                <div class="row justify-content-center">
+                    <div class="col-10 col-lg-8 blurb mb-5 mb-md-0">
+                        <h2>Unit maintenance</h2>
+                        <img src="imgs/lolli_icon.png" alt="" class="d-none d-lg-inline">
+                        <p class="lead text">Condominium owners can avoid costly damage and repairs to their building systems through a program of regular preventive maintenance. This guide outlines areas that condo owners can accomplish on a regularly scheduled basis, many of which can be performed without the need for a contractor. Those areas where a contractor would be advisable are noted in the list. </p>
+                    </div>
                 </div>
             </div>
-
-
         </div>
+        <div class="row align-items-center content">
+
+            <div class="col-md-6 text-center">
+                <div class="row justify-content-center">
+                    <div class="col-10 col-lg-8 blurb mb-5 mb-md-0">
+                        <h2>Exterior maintenance</h2>
+                        <img src="imgs/lolli_icon.png" alt="" class="d-none d-lg-inline">
+                        <p class="lead text">When an association fails to maintain common areas, it can lead to possible legal trouble. Of course, every association’s policies are different. It is worth checking your association’s governing documents, specifically the CC&Rs, to see which maintenance responsibilities fall under the scope of the COA.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 p-5">
+                <img src="https://images.unsplash.com/photo-1589083130544-0d6a2926e519?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80" alt="" class="img-fluid">
+            </div>
+        </div>
+        <div class="row align-items-center content">
+            <div class="col-md-6 order-2 order-md-1 p-5">
+                <img src="https://images.unsplash.com/photo-1589083130512-807662dbf998?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80" alt="" class="img-fluid">
+            </div>
+            <div class="col-md-6 text-center order-1 order-md-2">
+                <div class="row justify-content-center">
+                    <div class="col-10 col-lg-8 blurb mb-5 mb-md-0">
+                        <h2>Accounting & billing</h2>
+                        <img src="imgs/lolli_icon.png" alt="" class="d-none d-lg-inline">
+                        <p class="lead text">Accounting software plays a critical role in keeping your business financially sound. The best accounting software fits within your budget, is easy to use, and integrates with other programs and applications you are already using.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
 
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 
-    </div>
-</div>*@
-
-@*<h4>Hello, @Model.Name @Model.LastName</h4>*@
-
-
-
-
+    <script>
+        $(function () {
+            $(document).scroll(function () {
+                var $nav = $("#mainNavbar");
+                $nav.toggleClass("scrolled", $(this).scrollTop() > $nav.height())
+            })
+        })
+    </script>
+</body>
+</html>
