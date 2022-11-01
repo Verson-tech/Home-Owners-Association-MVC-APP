@@ -1,13 +1,19 @@
 ﻿@model IEnumerable<Request>
 
-<h2>Requests</h2>
+<h2 style="font-family:'Agency FB'; color:indianred;text-align:center">Maintenance requests</h2>
 
 @*<div style="display: block">
     <a href="/Request/InsertRequest/">Create a New Request</a>
 </div>*@
 
+<style>
+    body{
+        background-image: url('https://images.unsplash.com/photo-1464618663641-bbdd760ae84a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80');
+    }
+</style>
+
 <table class="table">
-    <tr>
+    <tr style="text-align:center">
         <th>Request ID</th>
         <th>Name</th>     
         <th>Category ID</th>
@@ -21,14 +27,18 @@
 
     @foreach (var request in @Model)
     {
-        <tr>
-            <td><a href=/Request/ViewRequest/@request.RequestID>@request.RequestID</a></td>
+        <tr style="text-align:center">
+            <td>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil" viewBox="0 0 16 16">
+                    <path d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168l10-10zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207 11.207 2.5zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293l6.5-6.5zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z" />
+                </svg><a style="text-decoration:none; text-indent:hanging; font-family:'Agency FB'; color:indianred;" href=/Request/ViewRequest/@request.RequestID>@request.RequestID</a>
+            </td>
             @*<td>@request.RequestID</td>*@
             <td>@request.Name</td>
             @*<td><a href=/Request/ViewRequest/@request.RequestID>@request.Name</a></td>*@
             <td>@request.CategoryID</td>
             <td>@request.RequestDESC</td>
-            <td>@request.RequestSTATUS</td>
+            <td style="font-family:'Agency FB'; color:indianred;">@request.RequestSTATUS</td>
             <td>@request.StartDate</td>
             <td>@request.EndDate</td>
             <td>@request.Initiator</td>

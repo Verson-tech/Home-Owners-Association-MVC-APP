@@ -1,5 +1,11 @@
 ﻿@model Request
 
+<style>
+    body {
+        background-image: url('https://images.unsplash.com/photo-1464618663641-bbdd760ae84a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80');
+    }
+</style>
+
 <h2>Update "  @Model.Name " request</h2>
 
 @using (Html.BeginForm("UpdateRequestToDatabase", "Request", "Post"))
@@ -22,21 +28,17 @@
         </select>
     </div>
 
-
-
-
-
     <label asp-for="RequestDESC" class="control-label">Request description</label>
-    <input type="text" step="0.01" name="CategoryID" class="form-control" value="@Model.CategoryID" />
+    <input type="text" step="0.01" name="RequestDESC" class="form-control" value="@Model.CategoryID" />
 
     <label asp-for="RequestSTATUS" class="control-label">Request STATUS</label>
     <input type="text" step="0.01" name="RequestSTATUS" class="form-control" value="@Model.RequestSTATUS" />
 
     <label asp-for="StartDate" class="control-label">Start Date</label>
-    <input type="datetime" step="0.01" name="StartDate" class="form-control" value="@Model.StartDate" />
+    <input type="date" step="0.01" name="StartDate" class="form-control" value="@Model.StartDate" />
 
     <label asp-for="EndDate" class="control-label">End Date</label>
-    <input type="number" step="0.01" name="EndDate" class="form-control" value="@Model.EndDate" />
+    <input type="date" step="0.01" name="EndDate" class="form-control" value="@Model.EndDate" />
 
     <label asp-for="Initiator" class="control-label">Initiator</label>
     <input type="text" step="0.01" name="Initiator" class="form-control" value="@Model.Initiator" />

@@ -1,5 +1,12 @@
 ﻿@model Request
 
+
+<style>
+    body {
+        background-image: url('https://images.unsplash.com/photo-1464618663641-bbdd760ae84a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80');
+    }
+</style>
+
 <h2>Create a New Request</h2>
 
 @using (Html.BeginForm("InsertRequestToDatabase", "Request", "Post"))
@@ -26,7 +33,7 @@
         </div>
 
     <label asp-for="RequestDESC" class="control-label">Request description</label>
-    <input type="text" step="0.01" name="CategoryID" class="form-control" value="@Model.CategoryID" />
+    <input type="text" step="0.01" name="RequestDESC" class="form-control" value="@Model.CategoryID" />
 
     <label asp-for="RequestSTATUS" class="control-label">Request STATUS</label>
     <input type="text" step="0.01" name="RequestSTATUS" class="form-control" value="@Model.RequestSTATUS" />
@@ -50,4 +57,10 @@
 
 
     <input type="submit" value="Create Request" class="btn btn-primary" />
+
+
+    <div class="card-body">
+        <a class="dropdown-item justify-content-center text-center bg-info" asp-controller="Request" asp-action="Index">Back to all requests</a>
+    </div>
+
 }

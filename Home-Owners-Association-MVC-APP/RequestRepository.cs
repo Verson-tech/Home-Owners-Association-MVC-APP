@@ -47,14 +47,14 @@ namespace Home_Owners_Association_MVC_APP
 
         public void InsertRequest(Request requestToInsert)
         {
-            _conn.Execute("INSERT INTO maintenance (NAME, CATEGORYID, REQUESTDESC, REQUESTSTATUS, ENDDATE, INITIATOR, ASSIGNEE) VALUES (@name, @categoryID, @requestdesc, @requeststatus, @enddate, @initiator,@assignee);",
-                 new { name = requestToInsert.Name, categoryID = requestToInsert.CategoryID, requestDESC = requestToInsert.RequestDESC, requestSTATUS = requestToInsert.RequestSTATUS, endDate =requestToInsert.EndDate, initiator = requestToInsert.Initiator, assignee = requestToInsert.Assignee });
+            _conn.Execute("INSERT INTO maintenance (NAME, CATEGORYID, REQUESTDESC, REQUESTSTATUS,STARTDATE, ENDDATE, INITIATOR, ASSIGNEE) VALUES (@name, @categoryID, @requestdesc, @requeststatus,@startdate, @enddate, @initiator,@assignee);",
+                 new { name = requestToInsert.Name, categoryID = requestToInsert.CategoryID, requestDESC = requestToInsert.RequestDESC, requestSTATUS = requestToInsert.RequestSTATUS, startDate = requestToInsert.StartDate, endDate =requestToInsert.EndDate, initiator = requestToInsert.Initiator, assignee = requestToInsert.Assignee });
         }
 
         public void UpdateRequest(Request request)
         {
-            _conn.Execute("UPDATE maintenance SET Name = @name, CategoryID = @categoryid, RequestDESC = @requestdesc, RequestSTATUS = @requeststatus, EndDate = @enddate, Initiator = @initiator, Assignee = @assignee WHERE RequestID = @id",
-                new { name = request.Name, categoryid = request.CategoryID, requestdesc = request.RequestDESC, requeststatus = request.RequestSTATUS, enddate = request.EndDate, initiator = request.Initiator, assignee = request.Assignee, id = request.RequestID });
+            _conn.Execute("UPDATE maintenance SET Name = @name, CategoryID = @categoryid, RequestDESC = @requestdesc, RequestSTATUS = @requeststatus,StartDate = @startdate , EndDate = @enddate, Initiator = @initiator, Assignee = @assignee WHERE RequestID = @id",
+                new { name = request.Name, categoryid = request.CategoryID, requestdesc = request.RequestDESC, requeststatus = request.RequestSTATUS, startdate= request.StartDate, enddate = request.EndDate, initiator = request.Initiator, assignee = request.Assignee, id = request.RequestID });
         }
     }
 }

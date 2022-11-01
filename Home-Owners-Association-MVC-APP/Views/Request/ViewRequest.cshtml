@@ -1,9 +1,18 @@
 ﻿@model Request
 
-<h3>@Model.Name Information</h3>
+
+<style>
+    body {
+        background-image: url('https://images.unsplash.com/photo-1464618663641-bbdd760ae84a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80');
+    }
+</style>
+
+
+<h3 style="text-align:center; color: indianred;">"@Model.Name" Request Information</h3>
+
 
 <table class="table">
-    <tr>
+    <tr style="text-align:center">
         <th>Request ID</th>
         <th>Name</th>
         <th>CategoryID</th>
@@ -14,12 +23,12 @@
         <th>Initiator</th>
         <th>Assignee</th>
     </tr>
-    <tr>
+    <tr style="text-align:center">
         <td>@Model.RequestID</td>
         <td>@Model.Name</td>
         <td>@Model.CategoryID</td>
         <td>@Model.RequestDESC</td>
-        <td>@Model.RequestSTATUS</td>
+        <td style="color: indianred; font-family:'Agency FB';">@Model.RequestSTATUS</td>
         <td>@Model.StartDate</td>
         <td>@Model.EndDate</td>
         <td>@Model.Initiator</td>
@@ -27,15 +36,24 @@
     </tr>
     </table>
 
-<div style="display: block">
-    <a href="/Request/UpdateRequest/@Model.RequestID">Update this Request</a>
-</div>
 
-<div style="display: block">
+    <div class="card-body">
+        <button style="display: block; border-radius: 8%;">
+            <a style="text-decoration: none; color: black;" href="/Request/UpdateRequest/@Model.RequestID">Update this Request</a>
+        </button>
+    </div>
 
-    @using (Html.BeginForm("DeleteRequest", "Request", "Post"))
-    {
-        <input type="hidden" asp-for="RequestID" value="@Model.RequestID" />
-        <input type="submit" onclick="return confirm('Are you sure?')" value="Delete this request" />
-    }
-</div>
+
+
+    <div style="display: block; border-radius: 8%; padding:20px;">
+
+        @using (Html.BeginForm("DeleteRequest", "Request", "Post"))
+        {
+            <input type="hidden" asp-for="RequestID" value="@Model.RequestID" />
+            <input type="submit" onclick="return confirm('Are you sure?')" value="Delete this request" />
+        }
+    </div>
+
+    <div class="card-body">
+        <a class="dropdown-item justify-content-center text-center bg-info" asp-controller="Request" asp-action="Index">Back to all requests</a>
+    </div>
