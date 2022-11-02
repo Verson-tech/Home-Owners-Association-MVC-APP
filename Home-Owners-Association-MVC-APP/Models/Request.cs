@@ -21,5 +21,7 @@ namespace Home_Owners_Association_MVC_APP.Models
         public string? Assignee { get; set; }
         public IEnumerable<Category> Categories { get; set; }
 
+        public IEnumerable<Status> StatusList { get; set; }
+
     }
 }

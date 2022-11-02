@@ -35,9 +35,19 @@
     <label asp-for="RequestDESC" class="control-label">Request description</label>
     <input type="text" step="0.01" name="RequestDESC" class="form-control" value="@Model.CategoryID" />
 
-    <label asp-for="RequestSTATUS" class="control-label">Request STATUS</label>
-    <input type="text" step="0.01" name="RequestSTATUS" class="form-control" value="@Model.RequestSTATUS" />
+@*    <label asp-for="RequestSTATUS" class="control-label">Request STATUS</label>
+    <input type="text" step="0.01" name="RequestSTATUS" class="form-control" value="@Model.RequestSTATUS" />*@
 
+    <div class="form-group">
+        <label for="">Select a Status</label>
+        <select class="form-control" name="RequestSTATUS" value="">
+            @foreach (var cat in Model.StatusList)
+            {
+                <option value="@cat.IdStatus"> @cat.IdStatus</option>
+                @*  <option value="@cat.Name">@cat.CategoryID @cat.Name</option>*@
+            }
+        </select>
+    </div>
 
 
 

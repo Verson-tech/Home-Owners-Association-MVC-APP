@@ -12,14 +12,20 @@ namespace Home_Owners_Association_MVC_APP
             _conn = conn;
         }
 
-        public Request AssignCategory()
+        public Request AssignCategoryAndStatus()
         {
             var categoryList = GetCategories();
             var request = new Request();
+            var statusList = GetStatus();          
             request.Categories = categoryList;
+            request.StatusList = statusList;
             return request;
         }
 
+        public IEnumerable<Status> GetStatus()
+        {
+            return _conn.Query<Status>("SELECT * FROM status;");
+        }
         public void DeleteRequest(Request request)
         {
             _conn.Execute("DELETE FROM MAINTENANCE WHERE RequestID = @id;", new { id = request.RequestID });

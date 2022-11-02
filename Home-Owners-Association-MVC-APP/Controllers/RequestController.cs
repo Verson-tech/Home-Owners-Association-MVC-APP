@@ -44,7 +44,7 @@ namespace Home_Owners_Association_MVC_APP.Controllers
 
         public IActionResult InsertRequest()
         {
-            var req = repo.AssignCategory();
+            var req = repo.AssignCategoryAndStatus();
             return View(req);
         }
 

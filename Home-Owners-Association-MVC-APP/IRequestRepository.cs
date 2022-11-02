@@ -10,7 +10,7 @@ namespace Home_Owners_Association_MVC_APP
         public void UpdateRequest(Request request);
         public void InsertRequest(Request requestToInsert);
         public IEnumerable<Category> GetCategories();
-        public Request AssignCategory();
+        public Request AssignCategoryAndStatus();
         public void DeleteRequest(Request request);
     }
 }
