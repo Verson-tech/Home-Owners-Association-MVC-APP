@@ -1,3 +1,4 @@
+![](https://github.com/Verson-tech/Home-Owners-Association-MVC-APP/blob/main/sql-crud-mvc-demo.gif)
 <h1 align="center" style="display: block; font-size: 2.5em; font-weight: bold; margin-block-start: 1em; margin-block-end: 1em;">
   <br><br><strong>Home Owners Association MVC APP</strong>
   <br><br><strong>with MySQL Workbench DB</strong>
@@ -16,7 +17,6 @@
 5. Future improvements</br>
 Future improvements include frontend and backend.
 
-![](https://github.com/Verson-tech/Home-Owners-Association-MVC-APP/blob/main/sql-crud-mvc-demo.gif)
 ![](https://github.com/Verson-tech/Home-Owners-Association-MVC-APP/blob/main/1.JPG)
 
 
