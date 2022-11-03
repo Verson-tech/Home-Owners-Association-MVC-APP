@@ -17,16 +17,29 @@
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="app.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@700&display=swap"
+          rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap"
+          rel="stylesheet" />
 
     <title>HOA APP</title>
 </head>
+<style>
+    nav, footer {
+        font-family: 'Lobster', cursive;
+        color: rgb(114, 44, 99);
 
+    }
+</style>
 <body>
     <section class="background-radial-gradient overflow-hidden rounded-bottom">
 
     <style>
         body{
-    background: #f5d9d5;
+                background: #bcb3f2;
     font-family: "Nunito",sans-serif;
 }
 .blurb h2{
@@ -49,7 +62,8 @@
     font-size: 1.125rem;
 }
 #mainNavbar .nav-link {
-color: white;
+    color: #172236;
+    text-shadow: white 1px 0 10px;
 }
 #mainNavbar .nav-link:hover {
     color: #7d1178;
@@ -70,7 +84,7 @@ color: white;
     background: rgb(222, 192, 222) ;
     transition: background 700ms;
 }
-@@media (max-Width:1200px){
+ @@media (max-Width:1200px){
     #headingGroup h1{
         font-weight: 100;
         font-size: 3rem;
@@ -109,18 +123,19 @@ color: white;
         <div class="container px-4 py-5 px-md-5 text-center text-lg-start my-5">
 
 </div>
-    <nav id="mainNavbar" class="navbar navbar-dark navbar-expand-md py-0 fixed-top">
-        <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">HOA APP</a>
+        <nav id="mainNavbar" class="navbar navbar-dark navbar-expand-md py-0 fixed-top" style="font-size: 26px;">
+
+            <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand pr-5">HOA APP</a>
         <button class="navbar-toggler" data-toggle="collapse" data-target="#navLinks" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navLinks">
             <ul class="navbar-nav">
-                <li class="nav-item">
+                <li class="nav-item pr-5">
                     <a asp-area="" asp-controller="Home" asp-action="Index" class="nav-link">HOME</a>
                 </li>
                @* <a class="nav-link text-dark" style="text-shadow: 3px 3px 5px white; padding-right:200px;" asp-area="" asp-controller="Home" asp-action="Index">Home</a>*@
-                <li class="nav-item">
+                    <li class="nav-item pr-5">
                     <a asp-area="" asp-controller="Request" asp-action="InsertRequest" class="nav-link">CREATE REQUESTS</a>
                 </li>
                 @*<a class="nav-link text-dark" style="text-shadow: 3px 3px 5px white;" asp-area="" asp-controller="Request" asp-action="InsertRequest">Create requests</a>*@
@@ -129,6 +144,7 @@ color: white;
                 </li>
             </ul>
         </div>
+
     </nav>
 
     <section class="container-fluid px-0 mt-5">
@@ -143,7 +159,7 @@ color: white;
                 
                 <div>
                     @*view & update requets card:*@
-                    <section class="row justify-content-center mt-5" style=" opacity: 0.9;">
+                    <section class="row justify-content-center mt-5" style=" opacity: 0.8;">
                         <div class="card col-md-6 float-md-end mb-3 ms-md-3"
                              style="width: 18rem; padding: 20px; margin: 40px;">
                             <img src="https://images.unsplash.com/photo-1586282023692-6bfbd629e85d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
@@ -151,7 +167,7 @@ color: white;
                                  style="margin-bottom: 20px"
                                  alt="..." />
                             <div class="card-body">
-                                <a class="dropdown-item justify-content-center text-center bg-info" asp-controller="Request" asp-action="Index">View & update requests</a>
+                                    <a class="dropdown-item justify-content-center text-center" style="background: #bcb3f2; color:#44006b; font-family: 'Lobster', cursive; font-size:35px;" asp-controller="Request" asp-action="Index">View & update requests</a>
                             </div>
                         </div>
                         @*        <div class="card col-md-6 float-md-end mb-3 ms-md-3"
