@@ -3,39 +3,18 @@
   <br><br><strong>Home Owners Association MVC APP</strong>
   <br><br><strong>with MySQL Workbench DB</strong>
 </h1>
-
-
 ---
-
-## Table of contents[![](./docs/img/pin.svg)](#table-of-contents)
-1. [Project description](#project-description)
-2. [Languages and tools](#languages-and-tools)
-3. [Future improvements](#future improvements)
-
----
-
-## Project description(#table-of-contents)
-
+1. Project description
 "Home Owners Association" Application uses CRUD functioanlity to CREATE, READ, UPDATE and DELETE maintenance requests.
-
----
-
-## Languages and tools(#languages-and-tools)
-
-> 💡 C#
-> 💡 HTML
-> 💡 CSS
-> 💡 JavaScript
-> 💡 Bootstrap
-> 💡 MySQL Workbench
-> 💡 GIT
-
-
---
-
-## Future improvements(#future improvements)
-
+3. Languages and tools 
+> 💡 C#</br>
+> 💡 HTML</br>
+> 💡 CSS</br>
+> 💡 JavaScript</br>
+> 💡 Bootstrap</br>
+> 💡 MySQL Workbench</br>
+> 💡 GIT</br>
+5. Future improvements
 Future improvements include frontend and backend.
-
 ---
 
