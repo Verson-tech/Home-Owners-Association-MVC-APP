@@ -3,15 +3,17 @@
 
 <style>
     body {
-        background-image: url('https://images.unsplash.com/photo-1464618663641-bbdd760ae84a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80');
+        background: radial-gradient( hsl(218, 41%, 35%) 25%, #f7aba6);
+        background-image: radial-gradient(1050px circle at 0% 0%, hsl(218, 41%, 35%) 15%, hsl(218, 41%, 30%) 35%, hsl(218, 41%, 20%) 75%, hsl(218, 41%, 19%) 80%, transparent 100%), radial-gradient(1550px circle at 100% 100%, hsl(218, 41%, 45%) 15%, hsl(218, 41%, 30%) 35%, hsl(218, 41%, 20%) 75%, hsl(218, 41%, 19%) 80%, transparent 100%);
+        /*        font-family: 'Lobster', cursive;
+            font-size: large; */
     }
 </style>
 
+<h3 style="font-family:'Agency FB'; color:#fa8178; text-align:center; font-size:xx-large; font-weight:700; text-shadow: 5px 5px 7px blue;">"@Model.Name" Request Information</h3>
 
-<h3 style="text-align:center; color: indianred;">"@Model.Name" Request Information</h3>
 
-
-<table class="table">
+<table class="table" style="color:aliceblue; font-size:x-large; font-family:'Agency FB';">
     <tr style="text-align:center">
         <th>Request ID</th>
         <th>Name</th>
@@ -37,23 +39,25 @@
 </table>
 
 
+
 <div class="card-body">
-    <button style="display: block; border-radius: 8%;">
-        <a style="text-decoration: none; color: black;" href="/Request/UpdateRequest/@Model.RequestID">Update this Request</a>
-    </button>
+    <a class="dropdown-item justify-content-center text-center" style="color:aliceblue; font-size:xx-large; font-family:'Agency FB'; background: radial-gradient( hsl(218, 41%, 35%) 25%, #f7aba6); " href="/Request/UpdateRequest/@Model.RequestID">Update this Request</a>
 </div>
 
 
 
-<div style="display: block; border-radius: 8%; padding:20px;">
+
+
+
+<div class="p-3 col text-center">
 
     @using (Html.BeginForm("DeleteRequest", "Request", "Post"))
     {
         <input type="hidden" asp-for="RequestID" value="@Model.RequestID" />
-        <input type="submit" onclick="return confirm('Are you sure?')" value="Delete this request" />
+        <input style="color:aliceblue; font-size:xx-large; font-family:'Agency FB'; background: radial-gradient( hsl(218, 41%, 35%) 25%, #f7aba6);" type="submit" onclick="return confirm('Are you sure?')" value="Delete this request" />
     }
 </div>
 
 <div class="card-body">
-    <a class="dropdown-item justify-content-center text-center bg-info" asp-controller="Request" asp-action="Index">Back to all requests</a>
+    <a class="dropdown-item justify-content-center text-center" style="color:aliceblue; font-size:xx-large; font-family:'Agency FB'; background: radial-gradient( hsl(218, 41%, 35%) 25%, #f7aba6); " asp-controller="Request" asp-action="Index">Back to all requests</a>
 </div>

@@ -1,6 +1,6 @@
 ﻿@model IEnumerable<Request>
 
-<h2 style="font-family:'Agency FB'; color:indianred;text-align:center">Maintenance requests</h2>
+<h2 style="font-family:'Agency FB'; color:#fa8178; text-align:center; font-size:xx-large; font-weight:700; text-shadow: 5px 5px 7px blue;">Maintenance requests</h2>
 
 @*<div style="display: block">
     <a href="/Request/InsertRequest/">Create a New Request</a>
@@ -8,12 +8,47 @@
 
 <style>
     body {
-        background-image: url('https://images.unsplash.com/photo-1464618663641-bbdd760ae84a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80');
+        background: radial-gradient( hsl(218, 41%, 35%) 25%, #f7aba6);
+        background-image: radial-gradient(850px circle at 0% 0%, hsl(218, 41%, 35%) 15%, hsl(218, 41%, 30%) 35%, hsl(218, 41%, 20%) 75%, hsl(218, 41%, 19%) 80%, transparent 100%), radial-gradient(1550px circle at 100% 100%, hsl(218, 41%, 45%) 15%, hsl(218, 41%, 30%) 35%, hsl(218, 41%, 20%) 75%, hsl(218, 41%, 19%) 80%, transparent 100%);
+/*        font-family: 'Lobster', cursive;
+        font-size: large; */
     }
 </style>
 
+<section class="background-radial-gradient overflow-hidden rounded-bottom">
+    <style>
+        .background-radial-gradient {
+            background-color: hsl(218, 41%, 15%);
+            background-image: radial-gradient(650px circle at 0% 0%, hsl(218, 41%, 35%) 15%, hsl(218, 41%, 30%) 35%, hsl(218, 41%, 20%) 75%, hsl(218, 41%, 19%) 80%, transparent 100%), radial-gradient(1250px circle at 100% 100%, hsl(218, 41%, 45%) 15%, hsl(218, 41%, 30%) 35%, hsl(218, 41%, 20%) 75%, hsl(218, 41%, 19%) 80%, transparent 100%);
+        }
+
+        #radius-shape-1 {
+            height: 220px;
+            width: 220px;
+            top: -60px;
+            left: -130px;
+            background: radial-gradient(#44006b, #ad1fff);
+            overflow: hidden;
+        }
+
+        #radius-shape-2 {
+            border-radius: 38% 62% 63% 37% / 70% 33% 67% 30%;
+            bottom: -60px;
+            right: -110px;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(#44006b, #ad1fff);
+            overflow: hidden;
+        }
+
+        .bg-glass {
+            background-color: hsla(0, 0%, 100%, 0.9) !important;
+            backdrop-filter: saturate(200%) blur(25px);
+        }
+    </style>
+
 <table class="table">
-    <tr style="text-align:center">
+        <tr style="text-align:center; color:aliceblue; font-size:x-large; font-family:'Agency FB';">
         <th>Request ID</th>
         <th>Name</th>
         <th>Category ID</th>
@@ -27,23 +62,25 @@
 
     @foreach (var request in @Model)
     {
-        <tr style="text-align:center">
-            <td>
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil" viewBox="0 0 16 16">
-                    <path d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168l10-10zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207 11.207 2.5zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293l6.5-6.5zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z" />
-                </svg><a style="text-decoration:none; text-indent:hanging; font-family:'Agency FB'; color:indianred;" href=/Request/ViewRequest/@request.RequestID>@request.RequestID</a>
-            </td>
+            <tr style="text-align:center; font-family:'Agency FB'; color:#f2f6f7; font-size:x-large;">
+                <td style="background:radial-gradient(#f2f6f7, #94daf7);">
+              <a style="text-decoration:none; text-indent:hanging; font-size:x-large; font-family:'Agency FB'; color:indianred;" href=/Request/ViewRequest/@request.RequestID>@request.RequestID</a>
+                    <svg style="color:#f7141f;" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil" viewBox="0 0 16 16">
+                        <path d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168l10-10zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207 11.207 2.5zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293l6.5-6.5zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z" />
+                    </svg>
+                </td>
             @*<td>@request.RequestID</td>*@
-            <td>@request.Name</td>
+                <td>@request.Name</td>
             @*<td><a href=/Request/ViewRequest/@request.RequestID>@request.Name</a></td>*@
-            <td>@request.CategoryID</td>
-            <td>@request.RequestDESC</td>
-            <td style="font-family:'Agency FB'; color:indianred;">@request.RequestSTATUS</td>
-            <td>@request.StartDate</td>
-            <td>@request.EndDate</td>
-            <td>@request.Initiator</td>
-            <td>@request.Assignee</td>
+                <td>@request.CategoryID</td>
+                <td>@request.RequestDESC</td>
+                <td style="color:indianred;">@request.RequestSTATUS</td>
+                <td>@request.StartDate</td>
+                <td>@request.EndDate</td>
+                <td>@request.Initiator</td>
+                <td>@request.Assignee</td>
         </tr>
     }
 
 </table>
+</section>

@@ -8,17 +8,25 @@
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/Home_Owners_Association_MVC_APP.styles.css" asp-append-version="true" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@700&display=swap"
+          rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap"
+          rel="stylesheet" />
 </head>
 <style>
     nav, footer {
-        font-family: "Sofia", sans-serif;
+        font-family: 'Lobster', cursive;
+        color: rgb(114, 44, 99);
+        font-size:xx-large;
     }
 </style>
 <body class="d-flex flex-column min-vh-100">
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-info border-bottom box-shadow mb-3">
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light border-bottom box-shadow mb-3" style="background: radial-gradient( #f7aba6, hsl(218, 41%, 35%) 85%);">
             <div class="container-fluid">
-                <a class="navbar-brand" style="text-shadow: 3px 3px 5px white; padding-right:550px;" asp-area="" asp-controller="Home" asp-action="Index">HOA App</a>
+                <a class="navbar-brand" style="text-shadow: 5px 5px 7px white; padding-right:550px;" asp-area="" asp-controller="Home" asp-action="Index">HOA App</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
