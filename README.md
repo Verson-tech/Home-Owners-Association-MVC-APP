@@ -14,7 +14,7 @@
 > 💡 Bootstrap</br>
 > 💡 MySQL Workbench</br>
 > 💡 GIT</br>
-5. Future improvements</br>
+3. Future improvements</br>
 Future improvements include frontend and backend.
 
 ![](https://github.com/Verson-tech/Home-Owners-Association-MVC-APP/blob/main/1.JPG)
