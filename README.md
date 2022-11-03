@@ -7,6 +7,7 @@
 1. Project description</br>
 "Home Owners Association" Application uses CRUD functioanlity to CREATE, READ, UPDATE and DELETE maintenance requests.</br>
 2. Languages and tools </br>
+> 💡 ASP .NET MVC</br>
 > 💡 C#</br>
 > 💡 HTML</br>
 > 💡 CSS</br>
